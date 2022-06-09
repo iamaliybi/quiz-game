@@ -1,0 +1,31 @@
+@font-face {
+	font-family: "Palestra";
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/Palestra.otf');
+	src: url('/fonts/Palestra.ttf'), url('/fonts/Palestra.otf');
+}
+
+@font-face {
+	font-family: "Palestra";
+	font-weight: 400;
+	font-style: italic;
+	src: url('/fonts/Palestra Italic.otf');
+	src: url('/fonts/Palestra Italic.ttf'), url('/fonts/Palestra Italic.otf');
+}
+
+@font-face {
+	font-family: "Palestra";
+	font-style: normal;
+	font-weight: 700;
+	src: url('/fonts/Palestra Bold.otf');
+	src: url('/fonts/Palestra Bold.ttf'), url('/fonts/Palestra Bold.otf');
+}
+
+@font-face {
+	font-family: "Palestra";
+	font-weight: 700;
+	font-style: italic;
+	src: url('/fonts/Palestra Bold Italic.otf');
+	src: url('/fonts/Palestra Bold Italic.ttf'), url('/fonts/Palestra Bold Italic.otf');
+}

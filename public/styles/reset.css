@@ -1,0 +1,16 @@
+body {
+	overflow-x: hidden;
+	background-color: rgb(255, 255, 255);
+	font: 400 14px 'Palestra';
+	user-select: none;
+}
+
+a,
+a:hover,
+a:active {
+	text-decoration: none;
+}
+
+img {
+	pointer-events: none;
+}

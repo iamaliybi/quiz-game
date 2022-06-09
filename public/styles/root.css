@@ -1,0 +1,4 @@
+:root {
+	--app-primary-bg: linear-gradient(90deg, rgb(180, 129, 247) 0%, 39.2283%, rgb(102, 95, 234) 78.4566%, 89.2283%, rgb(96, 92, 233) 100%);
+	--app-secondary-bg: linear-gradient(90deg, rgb(97, 229, 158) 0%, 28.135%, rgb(54, 201, 122) 56.2701%, 78.135%, rgb(12, 175, 88) 100%);
+}
