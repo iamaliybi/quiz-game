@@ -1,5 +1,5 @@
 const App = () => {
-	return (<div>learn react</div>);
+	return (<div>Snapp!</div>);
 };
 
 export default App;
