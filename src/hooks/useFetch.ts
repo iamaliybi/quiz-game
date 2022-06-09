@@ -16,7 +16,7 @@ type CacheType = {
 
 const CACHE: CacheType = {};
 
-const useFetch = <T>(url: string, options: RequestInit, cache = true): HookResponse<T> => {
+const useFetch = <T>(url: string, options?: RequestInit, cache = true): HookResponse<T> => {
 	const [state, setState] = useState<StateType<T>>({
 		hasError: false,
 		status: 'PENDING',
@@ -36,7 +36,7 @@ const useFetch = <T>(url: string, options: RequestInit, cache = true): HookRespo
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
-				...options.headers
+				...options?.headers
 			}
 		});
 		const data: T = await response.json();
