@@ -7,7 +7,7 @@ declare interface QuestionType {
 	incorrect_answers: string[];
 }
 
-declare interface ServiceResponse<T> {
+declare interface ApiResponse<T> {
 	response_code: number;
 	results: T,
 }
