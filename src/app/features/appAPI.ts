@@ -1,16 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import apiRoutes from '../../api/routes';
 
-/* export const updateUser = createAsyncThunk<QuestionType[]>('users/update', async (userData, { rejectWithValue }) => {
+export const fetchQuestions = createAsyncThunk<QuestionType[]>('fetch/questions', async () => {
 	try {
-		const { id, ...fields } = userData;
-		const response = await userAPI.updateById<UpdateUserResponse>(id, fields);
-		return response.data.user;
+		const response = await fetch(apiRoutes.questions.get);
+		const data = await response.json();
+
+		return data.results;
 	} catch (err) {
-		const error: AxiosError<ValidationErrors> = err; // cast the error for access
-		if (!error.response) {
-			throw err;
-		}
-		// We got validation errors, let's return those so we can reference in our component and set form errors
-		return rejectWithValue(error.response.data);
+		console.log(err);
 	}
-}); */
+});
