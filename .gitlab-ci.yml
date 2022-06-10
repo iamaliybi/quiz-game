@@ -1,0 +1,14 @@
+image: registry.example.com/my/image:latest
+stages:
+    - deploy
+
+Deploy:
+    stage: deploy
+    tags:
+        - Web01
+    artifacts:
+    script:
+        - npm install --force
+        - npm run build
+        - Remove-Item "D:\\" -Exclude base.js -Recurse
+        - Copy-item -Force -Recurse -Exclude base.js -Verbose "build\\*" -Destination "D:\\"
