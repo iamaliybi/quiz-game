@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react';
+import { getByTestId, render, screen } from '@testing-library/react';
 import App from '../App';
 
-describe('App', () => {
-	test('renders learn react link', () => {
-		render(<App />);
-		const linkElement = screen.getByText(/Snapp!/i);
-		expect(linkElement).toBeInTheDocument();
-	});
+it('renders learn react link', async () => {
+	const app = render(<App />);
+
+	const input = await app.findAllByTestId('input');
+	// input[0].simulate('change', { target: { value: 'Hello' } })
+	// expect(linkElement).toBeInTheDocument();
 });

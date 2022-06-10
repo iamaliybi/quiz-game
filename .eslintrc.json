@@ -35,6 +35,9 @@
         ],
         "react/react-in-jsx-scope": "off",
         "no-async-promise-executor": "off",
-        "react/no-unescaped-entities": "off"
+        "react/no-unescaped-entities": "off",
+        "prefer-spread": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/ban-ts-comment": "off"
     }
 }

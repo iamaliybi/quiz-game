@@ -49,6 +49,9 @@
 		"@typescript-eslint/eslint-plugin": "^5.27.1",
 		"@typescript-eslint/parser": "^5.27.1",
 		"eslint": "^8.17.0",
-		"eslint-plugin-react": "^7.30.0"
+		"eslint-plugin-react": "^7.30.0",
+		"install": "^0.13.0",
+		"jest-fetch-mock": "^3.0.3",
+		"npm": "^8.12.1"
 	}
 }

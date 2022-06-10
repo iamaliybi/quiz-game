@@ -94,6 +94,7 @@ const Welcome = ({ goToNextStep }: Props) => {
 							type='text'
 							name='name'
 							value={name.value}
+							data-testid='input'
 							placeholder='Your Name'
 							onChange={e => onChangeInput(e.target.value)}
 							className={name.hasError ? styles.invalid : undefined}
