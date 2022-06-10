@@ -1,7 +1,3 @@
-$titleTextColor: var(--dls-white);
-$submitBtnTextColor: var(--dls-white);
-$submitBtnBgColor: var(--dls-green);
-
 .container {
 	padding: 136px 32px;
 	display: flex;
@@ -17,7 +13,7 @@ $submitBtnBgColor: var(--dls-green);
 	h2 {
 		font-size: 32px;
 		font-weight: 700;
-		color: $titleTextColor;
+		color: var(--dls-white);
 	}
 }
 
@@ -50,11 +46,16 @@ $submitBtnBgColor: var(--dls-green);
 			padding: 0 16px;
 			font-size: 16px;
 			color: var(--dls-gray-300);
-			border: 0;
 			width: 100%;
+			background: var(--dls-white);
+			border: 2px solid var(--dls-white);
 
 			&::placeholder {
-				color: var(--dls-gray-200);
+				color: var(--dls-gray-300);
+			}
+
+			&.invalid {
+				border-color: var(--dls-red);
 			}
 		}
 	}
@@ -66,14 +67,24 @@ $submitBtnBgColor: var(--dls-green);
 	button {
 		width: 100%;
 		height: 48px;
-		background-color: $submitBtnBgColor;
+		background-color: var(--dls-green);
 		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: $submitBtnTextColor;
+		color: var(--dls-white);
 		border: 0;
 		border-radius: 24px;
 		font-size: 18px;
+
+		&:not(.loading):disabled {
+			cursor: not-allowed;
+			background-color: var(--dls-gray-300);
+		}
+
+		&.loading {
+			opacity: 65%;
+			cursor: progress;
+		}
 	}
 }

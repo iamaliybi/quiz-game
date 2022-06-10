@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { setAnsweredQuestion, setCorrectQuestion } from '../app/features/appSlice';
+import { useAppDispatch } from '../app/hooks';
 
 // Steps
 import FinallyResult from '../components/layout/FinallyResult';
@@ -13,10 +15,18 @@ const Container = () => {
 	 */
 	const [step, setStep] = useState(0);
 
+	const dispatch = useAppDispatch();
+
+	const retryAction = () => {
+		setStep(1);
+		dispatch(setAnsweredQuestion(0));
+		dispatch(setCorrectQuestion(0));
+	};
+
 	const getStepContainer = (step:  number) => [
 		<Welcome key='welcome-page' goToNextStep={() => setStep(1)} />,
 		<Questions key='questions-page' goToLastStep={() => setStep(2)} />,
-		<FinallyResult key='finally-result-page' goToFirstStep={() => setStep(0)} />
+		<FinallyResult key='finally-result-page' retryAction={retryAction} />
 	][step];
 
 	return getStepContainer(step);

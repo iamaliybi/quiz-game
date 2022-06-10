@@ -1,0 +1,37 @@
+$stroke: 6px;
+
+.container {
+	position: relative;
+	width: 114px;
+	height: 114px;
+}
+
+.svg {
+	width: 114px;
+	height: 114px;
+}
+
+.bg {
+	fill: none;
+	stroke-width: $stroke;
+	stroke: var(--dls-green-100);
+}
+
+.meter {
+	fill: none;
+	stroke-width: $stroke;
+	transform: rotate(-90deg);
+	transform-origin: 50% 50%;
+	stroke-dasharray: 360;
+	stroke: var(--dls-gray-200);
+}
+
+.value {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: var(--dls-white);
+	font-size: 32px;
+	border-radius: 0.25em;
+	transform: translate(-50%, -50%);
+}
