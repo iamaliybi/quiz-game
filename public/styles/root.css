@@ -1,4 +1,16 @@
 :root {
-	--app-primary-bg: linear-gradient(90deg, rgb(180, 129, 247) 0%, 39.2283%, rgb(102, 95, 234) 78.4566%, 89.2283%, rgb(96, 92, 233) 100%);
+	--app-primary-bg: linear-gradient(-90deg, rgb(180, 129, 247) 0%, 39.2283%, rgb(102, 95, 234) 78.4566%, 89.2283%, rgb(96, 92, 233) 100%);
 	--app-secondary-bg: linear-gradient(90deg, rgb(97, 229, 158) 0%, 28.135%, rgb(54, 201, 122) 56.2701%, 78.135%, rgb(12, 175, 88) 100%);
+	
+	--dls-white: rgb(255, 255, 255);
+
+	--dls-green: rgb(21, 191, 95);
+	--dls-green-100: rgb(97, 242, 165);
+
+	--dls-red: rgb(255, 137, 137);
+
+	--dls-gray: rgb(154, 143, 166);
+	--dls-gray-100: rgb(238, 238, 238);
+	--dls-gray-200: rgb(177, 177, 177);
+	--dls-gray-300: rgb(107, 107, 107);
 }
