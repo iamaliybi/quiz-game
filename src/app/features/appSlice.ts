@@ -11,7 +11,7 @@ interface AppState {
 const initialState: AppState = {
 	userName: localStorage.getItem('username'),
 	answeredQuestions: 0,
-	questions: null
+	questions: []
 };
 
 export const appSlice = createSlice({

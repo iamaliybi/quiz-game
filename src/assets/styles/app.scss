@@ -1,0 +1,11 @@
+body {
+	min-height: 100vh;
+
+	&.primary-bg {
+		background-image: var(--app-primary-bg);
+	}
+
+	&.secondary-bg {
+		background-image: var(--app-secondary-bg);
+	}
+}
