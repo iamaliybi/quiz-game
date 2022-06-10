@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { addAnsweredQuestion, getAnsweredQuestions, getQuestions, addCorrectQuestion } from '../../../app/features/appSlice';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks';
 import Question from './Questions';

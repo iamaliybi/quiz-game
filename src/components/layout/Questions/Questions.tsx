@@ -56,7 +56,7 @@ const Question = ({ question, currentQuestion, totalQuestion, onAnswerSelected, 
 		<div className={styles.container}>
 			<div className={styles.timeUp}>
 				<CircularProgressBar
-					percent={100 - ((times + 1) * 10)}
+					percent={100 - (times * 10)}
 					value={times}
 				/>
 			</div>
