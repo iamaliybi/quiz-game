@@ -2,16 +2,19 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 import { fetchQuestions } from './appAPI';
 
+
 interface AppState {
-	userName: string | null;
+	username: string | null;
+	questions: QuestionType[] | null;
 	answeredQuestions: number;
-	questions: QuestionType[] | null
+	correctQuestions: number;
 }
 
 const initialState: AppState = {
-	userName: localStorage.getItem('username'),
+	username: localStorage.getItem('username'),
+	questions: [],
 	answeredQuestions: 0,
-	questions: []
+	correctQuestions: 0,
 };
 
 export const appSlice = createSlice({
@@ -20,11 +23,29 @@ export const appSlice = createSlice({
 	initialState,
 
 	reducers: {
-		setUsername: (state: AppState, action: PayloadAction<string>) => {
-			state.userName = action.payload;
+		setUsername: (state: AppState, { payload }: PayloadAction<string>) => {
+			state.username = payload;
+			localStorage.setItem('username', payload);
 		},
-		setAnsweredQuestions: (state: AppState, action: PayloadAction<string>) => {
-			state.userName = action.payload;
+
+		setQuestions: (state: AppState, { payload }: PayloadAction<QuestionType[]>) => {
+			state.questions = payload;
+		},
+
+		addCorrectQuestion: (state: AppState) => {
+			state.correctQuestions = state.correctQuestions + 1;
+		},
+
+		setCorrectQuestion: (state: AppState, { payload }: PayloadAction<number>) => {
+			state.correctQuestions = payload;
+		},
+
+		addAnsweredQuestion: (state: AppState) => {
+			state.answeredQuestions = state.answeredQuestions + 1;
+		},
+
+		setAnsweredQuestion: (state: AppState, { payload }: PayloadAction<number>) => {
+			state.answeredQuestions = payload;
 		}
 	},
 
@@ -38,17 +59,18 @@ export const appSlice = createSlice({
 		});
 
 		builder.addCase(fetchQuestions.fulfilled, (state, { payload }) => {
-			state.questions = payload;
+			state.questions = payload as QuestionType[];
 		});
 	}
 });
 
 /* Get reducers */
-export const { setAnsweredQuestions, setUsername } = appSlice.actions;
+export const { setUsername, setQuestions, addCorrectQuestion, addAnsweredQuestion, setCorrectQuestion, setAnsweredQuestion } = appSlice.actions;
 
 /* Get states */
-export const getUsername = (state: RootState) => state.app.userName;
+export const getUsername = (state: RootState) => state.app.username;
 export const getQuestions = (state: RootState) => state.app.questions;
 export const getAnsweredQuestions = (state: RootState) => state.app.answeredQuestions;
+export const getCorrectQuestions = (state: RootState) => state.app.correctQuestions;
 
 export default appSlice.reducer;
